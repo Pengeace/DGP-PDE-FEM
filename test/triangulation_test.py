@@ -14,7 +14,7 @@ def read_data(path):
 
 for i, file in enumerate(os.listdir(shapes_dir)):
     # process only limited shape data
-    if i%50==0:
+    if i%100==0:
         shape = read_data(shapes_dir + file)
 
         shape_name = file[:-5]

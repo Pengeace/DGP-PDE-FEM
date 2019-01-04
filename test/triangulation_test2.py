@@ -42,8 +42,7 @@ for file in shape_files:
     borders = []
     for i in range(num_points):
         borders.append((i, (i + 1) % num_points))
-    try:
-        triangles = delaunay(points, constraint_borders=borders, shape_name=shape_name, dynamic_show=True)
-    except:
-        pass
+
+    triangles = delaunay(points, constraint_borders=borders, shape_name=shape_name, dynamic_show=True)
+
 

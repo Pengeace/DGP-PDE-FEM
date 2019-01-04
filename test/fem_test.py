@@ -18,7 +18,7 @@ max_point_error = []
 error_infinity_norm = []
 num_total_points = [600, 1000, 2000, 3000, 4000, 8000, 16000]
 
-for num_inner_points in [7700, 15700]:
+for num_inner_points in [300, 700, 1700, 2700, 3700, 7700, 15700]:
     points = []
     boundary = []
     while len(points) < num_inner_points:

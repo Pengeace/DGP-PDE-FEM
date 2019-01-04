@@ -9,6 +9,7 @@ result_dir = '../results/possionblending/'
 num_figures = 4
 # the row offset and column offset of mask images in target images
 mask_offsets = [(29, -37), (149, 126), (22, 9), (0, 33)]
+print('# Poisson image blending.')
 for i in range(1, num_figures + 1):
     print('# Process image group %d.' % i)
     img_mask = np.asarray(PIL.Image.open(figure_dir + 'test%d_mask.png' % i))

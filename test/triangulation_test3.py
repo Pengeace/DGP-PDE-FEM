@@ -11,6 +11,6 @@ borders = []
 for i in range(0,106):
     borders.append((i, i + 1))
 borders.append((106,0))
-triangles = delaunay(points, constraint_borders=borders, shape_name=shape_name, dynamic_show=False)
+triangles = delaunay(points, constraint_borders=borders, shape_name=shape_name, dynamic_show=True)
 
 

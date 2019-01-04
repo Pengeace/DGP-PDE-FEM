@@ -244,14 +244,11 @@ def delaunay(points, constraint_borders=None, shape_name=None, dynamic_show=Fals
 
         # dynamic triangulation results show
         if dynamic_show:
-            plt.scatter(x=[p[0] for k, p in enumerate(points[:point_num]) if k != i],
-                        y=[p[1] for k, p in enumerate(points[:point_num]) if k != i],
+            plt.scatter(x=[p[0] for k, p in enumerate(points[:point_num])],
+                        y=[p[1] for k, p in enumerate(points[:point_num])],
                         c='slategray', marker='o', s=10)
             # plt.scatter(x=[p[0] for k, p in enumerate(points[:point_num]) if k == i], y=[p[1] for k, p in enumerate(points[:point_num]) if k == i],
             # c='aqua', marker='s', s=20)
-            plt.scatter(x=[p[0] for k, p in enumerate(points[:point_num]) if k == i],
-                        y=[p[1] for k, p in enumerate(points[:point_num]) if k == i],
-                        c='slategray', marker='o', s=10)
             for n, tri in enumerate(triangles):
                 if (triangle_exist[n] and max(tri.vlist) < point_num):
                     xs = [points[v][0] for v in tri.vlist]
@@ -261,7 +258,7 @@ def delaunay(points, constraint_borders=None, shape_name=None, dynamic_show=Fals
                     plt.plot(xs, ys)
             if shape_name:
                 plt.title(shape_name, fontsize=14)
-            plt.savefig('../results/triangulation-gif/' + '%s-%d' % (shape_name, i) + '.pdf')
+            # plt.savefig('../results/triangulation-gif/' + '%s-%d' % (shape_name, i) + '.pdf')
             plt.show()
             # time.sleep(0.05)
             # plt.close()
@@ -380,13 +377,8 @@ def delaunay(points, constraint_borders=None, shape_name=None, dynamic_show=Fals
                 break
 
     if dynamic_show:
-        plt.scatter(x=[p[0] for k, p in enumerate(points[:point_num]) if k != i],
-                    y=[p[1] for k, p in enumerate(points[:point_num]) if k != i],
-                    c='slategray', marker='o', s=10)
-        # plt.scatter(x=[p[0] for k, p in enumerate(points[:point_num]) if k == i], y=[p[1] for k, p in enumerate(points[:point_num]) if k == i],
-        # c='aqua', marker='s', s=20)
-        plt.scatter(x=[p[0] for k, p in enumerate(points[:point_num]) if k == i],
-                    y=[p[1] for k, p in enumerate(points[:point_num]) if k == i],
+        plt.scatter(x=[p[0] for k, p in enumerate(points[:point_num])],
+                    y=[p[1] for k, p in enumerate(points[:point_num])],
                     c='slategray', marker='o', s=10)
         for n, tri in enumerate(triangles):
             if (triangle_exist[n] and max(tri.vlist) < point_num):
@@ -397,7 +389,7 @@ def delaunay(points, constraint_borders=None, shape_name=None, dynamic_show=Fals
                 plt.plot(xs, ys)
         if shape_name:
             plt.title(shape_name, fontsize=14)
-        plt.savefig('../results/triangulation-gif/' + '%s-%d' % (shape_name, point_num) + '.pdf')
+        # plt.savefig('../results/triangulation-gif/' + '%s-%d' % (shape_name, point_num) + '.pdf')
         plt.show()
 
     for n, tri in enumerate(triangles):
@@ -409,7 +401,7 @@ def delaunay(points, constraint_borders=None, shape_name=None, dynamic_show=Fals
             plt.plot(xs, ys)
     if shape_name:
         plt.title(shape_name + ' triangulation', fontsize=14)
-        plt.savefig('../results/triangulation/' + '%s-tri-%d-points' % (shape_name, point_num) + '.pdf')
+        # plt.savefig('../results/triangulation/' + '%s-tri-%d-points' % (shape_name, point_num) + '.pdf')
     plt.show()
     plt.close()
 
@@ -563,12 +555,9 @@ def delaunay(points, constraint_borders=None, shape_name=None, dynamic_show=Fals
                 xs.append(points[tri.vlist[0]][0])
                 ys.append(points[tri.vlist[0]][1])
                 plt.plot(xs, ys)
-        # if shape_name:
-        #     plt.title(shape_name +' constraint triangulation', fontsize=14)
-        #     plt.savefig('../results/triangulation/' + '%s-tri-constraint-%d-points' % (shape_name, point_num) + '.pdf')
         if shape_name:
-            plt.title(shape_name, fontsize=14)
-        plt.savefig('../results/triangulation-gif/' + '%s-%d' % (shape_name, point_num + 1) + '.pdf')
+            plt.title(shape_name +' constraint triangulation', fontsize=14)
+            # plt.savefig('../results/triangulation/' + '%s-tri-constraint-%d-points' % (shape_name, point_num) + '.pdf')
         plt.show()
         # plt.close()
 
