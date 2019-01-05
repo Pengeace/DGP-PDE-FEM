@@ -15,7 +15,7 @@ class Point:
 class Edge:
     def __init__(self, v1, v2, tri=None):
 
-        assert v1 != v2
+        # assert v1 != v2
 
         self.v1 = min(v1, v2)
         self.v2 = max(v1, v2)
@@ -51,11 +51,11 @@ class Edge:
 
 class Triangle:
     def __init__(self, vlist, elist):
-        assert len(set(vlist)) == 3
+        # assert len(set(vlist)) == 3
 
-        assert vlist[0] != vlist[1]
-        assert vlist[0] != vlist[2]
-        assert vlist[1] != vlist[2]
+        # assert vlist[0] != vlist[1]
+        # assert vlist[0] != vlist[2]
+        # assert vlist[1] != vlist[2]
 
         self.vlist = vlist
         self.elist = elist
